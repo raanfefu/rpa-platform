@@ -1,0 +1,31 @@
+{
+  "name": "rpa-platform",
+  "version": "0.1.0",
+  "bin": {
+    "rpa-platform": "bin/rpa-platform.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "cdk-synth-develop": "export $(cat ./environment/develop.env) && cdk synth",
+    "cdk-deploy-develop": "export $(cat ./environment/develop.env) && cdk deploy --all",
+    "cdk-destroy-develop": "export $(cat ./environment/develop.env) && cdk destroy --all",
+    "cdk-diff-develop": "export $(cat ./environment/develop.env) && cdk diff"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.5",
+    "@types/node": "18.11.18",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.3",
+    "aws-cdk": "2.60.0",
+    "ts-node": "^10.9.1",
+    "typescript": "~4.9.4"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.60.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.21"
+  }
+}

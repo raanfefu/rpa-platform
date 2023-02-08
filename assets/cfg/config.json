@@ -2,6 +2,9 @@
   "bots": [
     {
       "name": "myfirstbot"
-    } 
+    },
+    {
+      "name": "jorgebot"
+    }
   ]
 }

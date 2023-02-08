@@ -9,20 +9,13 @@ export class RpaPlatformStack extends cdk.Stack {
     super(scope, id, sprops);
 
     const props : any = sprops?.env;
+    
+    
 
-    const SQSQueue = new cdk.aws_sqs.Queue(this, `${props['CDK_PARAM_PROJECT']}-sqs-${props['CDK_PARAM_ENVIRONMENT']}`, {
-      queueName: `${props['CDK_PARAM_PROJECT']}-sqs-${props['CDK_PARAM_ENVIRONMENT']}`,
-      visibilityTimeout: Duration.seconds(300)
-    });
 
     bots.forEach( e => {
-      new RpaBotInstanceStack( this, `rpa-platform-bot-${e.name}-stack`,{
-        stackName:  `rpa-platform-bot-${e.name}-stack`,
-        env: {
-          region: props['CDK_DEPLOY_REGION'],
-          account: props['CDK_DEPLOY_ACCOUNT'],
-          ... props
-        },
+      new RpaBotInstanceStack( this, `bot-${e.name}-stack`, {
+        ...props
       })
     });
 

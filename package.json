@@ -12,7 +12,8 @@
     "cdk-synth-develop": "export $(cat ./environment/develop.env) && cdk synth",
     "cdk-deploy-develop": "export $(cat ./environment/develop.env) && cdk deploy --all",
     "cdk-destroy-develop": "export $(cat ./environment/develop.env) && cdk destroy --all",
-    "cdk-diff-develop": "export $(cat ./environment/develop.env) && cdk diff"
+    "cdk-diff-develop": "export $(cat ./environment/develop.env) && cdk diff",
+    "cdk-ls-develop": "export $(cat ./environment/develop.env) && cdk list"
   },
   "devDependencies": {
     "@types/jest": "^29.2.5",
